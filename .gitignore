@@ -24,3 +24,9 @@
 
 /plugin/*-results.json
 /plugin/*-verification.json
+
+!/Dockerfile
+!/.dockerignore
+!/railway.json
+!/version.json
+!/.github/

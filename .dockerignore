@@ -1,0 +1,17 @@
+**
+!Dockerfile
+!version.json
+!plugin
+!plugin/**
+!scripts
+!scripts/**
+!website
+!website/**
+**/__pycache__
+**/node_modules
+**/.env*
+plugin/*.amxd
+plugin/doppelgänger*.maxpat
+plugin/*-results.json
+website/releases
+website/deployment.json

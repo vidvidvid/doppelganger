@@ -22,5 +22,7 @@ mkdirSync(base+'releases',{recursive:true});
 let previous;try{previous=JSON.parse(readFileSync(base+'releases/latest.json','utf8'));}catch{}
 const publishedAt=previous?.sha256===sha256?previous.publishedAt:new Date().toISOString();
 writeFileSync(base+'releases/latest.zip.tmp',zip);renameSync(base+'releases/latest.zip.tmp',base+'releases/latest.zip');
-writeFileSync(base+'releases/latest.json',JSON.stringify({version,publishedAt,bytes:zip.length,sha256,download:'/download/latest'},null,2)+'\n');
+const sourceCommit=process.env.RAILWAY_GIT_COMMIT_SHA||process.env.GITHUB_SHA||null;
+if(sourceCommit&&!/^[a-f0-9]{40}$/.test(sourceCommit))throw Error('Invalid source commit');
+writeFileSync(base+'releases/latest.json',JSON.stringify({version,sourceCommit,publishedAt,bytes:zip.length,sha256,download:'/download/latest'},null,2)+'\n');
 console.log(`Prepared v${version}: ${zip.length} bytes, SHA256 ${sha256}`);

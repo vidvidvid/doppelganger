@@ -215,8 +215,8 @@ box('correction_visual','prepend correctionlimit');wire('limit',0,'correction_vi
 for item in lines:
  w=item['patchline']
  if w['source']==['limit',0]:w['order']=0 if w['destination'][0]=='correction_visual' else 1
-template=Path('/Applications/Ableton Live 12 Suite.app/Contents/App-Resources/Misc/Max Devices/Max Audio Effect.amxd').read_bytes()
-p['project']=json.loads(template[32:].rstrip(b'\0'))['patcher']['project']
+# Self-contained audio-effect project metadata; no installed Ableton template needed.
+p['project']={'version':1,'amxdtype':1633771873,'devpath':'.','devpathtype':0,'autolocalize':0,'autoorganize':1,'hideprojectwindow':1,'showdependencies':1,'contents':{'patchers':{}},'layout':{},'searchpath':{},'readonly':0}
 theme=json.loads((out/'industrial-theme.json').read_text())
 p['bgcolor']=theme['bgcolor']
 for item in p['boxes']:item['box'].update(theme['styles'].get(item['box']['id'],{}))

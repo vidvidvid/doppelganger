@@ -25,7 +25,7 @@ The local legacy `outputs/` and `work/` folders are deliberately excluded from G
 
 ## Build and test
 
-Requires Python 3 and an installed Ableton Live 12 Suite application on macOS for the device-header template. The generated device and companion files are intended for both macOS and Windows.
+Requires Python 3 and Node.js 22. The build is self-contained and works on Linux, macOS and Windows. The generated device and companion files are intended for both macOS and Windows.
 
 ```sh
 python3 plugin/build.py
@@ -54,3 +54,9 @@ Deploy using `node scripts/publish.mjs '../dist/doppelgänger-share.zip' 0.3.0` 
 ## Privacy
 
 This repository contains no personal audio, Live Sets, captured audio, reference-library database, original track-analysis fixtures, account credentials or workstation paths. Test profiles are generated mathematically. Source audio stays local; learned profiles are stored with the Live Set. The reference library stores original file paths and analysis rather than duplicating audio.
+
+## Automatic deployment
+
+Pushes to `main` trigger Railway through its GitHub connection. The root Dockerfile runs the tests, builds both devices, packages the ZIP and prepares the website before deployment. Failed builds do not replace the running site. Pull requests run the same checks in GitHub Actions without deploying. No Railway credentials are stored in this repository or GitHub Actions.
+
+Update `version.json` when making a numbered release. Every deployment includes its source commit in `/release.json`, even when the version number stays the same. Develop in `plugin/` and `website/`; ignored legacy working directories are not deployed.
