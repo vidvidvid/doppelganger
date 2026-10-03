@@ -1,6 +1,7 @@
 **
 !Dockerfile
 !version.json
+!CHANGELOG.md
 !plugin
 !plugin/**
 !scripts

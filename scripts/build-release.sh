@@ -1,5 +1,6 @@
 #!/bin/sh
 set -eu
+python3 scripts/sync-release-docs.py
 python3 plugin/build.py
 node plugin/test_core.js
 node plugin/test_fresh_start.js

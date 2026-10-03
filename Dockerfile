@@ -4,7 +4,7 @@ WORKDIR /build
 COPY plugin ./plugin
 COPY scripts ./scripts
 COPY website ./website
-COPY version.json ./
+COPY version.json CHANGELOG.md ./
 ARG RAILWAY_GIT_COMMIT_SHA
 ENV RAILWAY_GIT_COMMIT_SHA=$RAILWAY_GIT_COMMIT_SHA
 RUN sh scripts/build-release.sh

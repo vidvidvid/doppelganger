@@ -62,3 +62,5 @@ Pushes to `main` trigger Railway through its GitHub connection. The root Dockerf
 Update `version.json` when making a numbered release. Every deployment includes its source commit in `/release.json`, even when the version number stays the same. Develop in `plugin/` and `website/`; ignored legacy working directories are not deployed.
 
 To confirm a push reached production, compare the `sourceCommit` field at [release.json](https://download-production-14fa.up.railway.app/release.json) with the commit SHA on GitHub. The website and downloadable ZIP are deployed together.
+
+See [AGENTS.md](AGENTS.md) for the required development/release workflow and [CHANGELOG.md](CHANGELOG.md) for versioned release notes. The build validates the current version and copies the canonical guide and release notes into the website and download.

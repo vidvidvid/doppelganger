@@ -5,6 +5,7 @@ const root=fileURLToPath(new URL('.',import.meta.url));
 const release=JSON.parse(readFileSync(root+'releases/latest.json','utf8'));
 const zip=readFileSync(root+'releases/latest.zip');
 const html=readFileSync(root+'dist/index.html','utf8').replaceAll('{{VERSION}}',release.version).replaceAll('{{SIZE}}',`${(release.bytes/1024).toFixed(0)} KB`).replaceAll('{{DATE}}',release.publishedAt.slice(0,10)).replaceAll('{{SHA256}}',release.sha256);
+const releaseNotes=readFileSync(root+'dist/CHANGELOG.md');
 const guide=readFileSync(root+'dist/guide.html');
 const guideImages=new Map(['eq','analysis','dynamics'].map(name=>['/guide-images/'+name+'.jpg',readFileSync(root+'dist/guide-images/'+name+'.jpg')]));
 const server=http.createServer((req,res)=>{
@@ -16,6 +17,7 @@ const server=http.createServer((req,res)=>{
  let pathname;try{pathname=new URL(req.url,'http://localhost').pathname;}catch{res.writeHead(400);return res.end();}
  let body,type;
  if(pathname==='/') {body=html;type='text/html; charset=utf-8';}
+ else if(pathname==='/release-notes'){body=releaseNotes;type='text/plain; charset=utf-8';}
  else if(pathname==='/guide'){body=guide;type='text/html; charset=utf-8';}
  else if(guideImages.has(pathname)){body=guideImages.get(pathname);type='image/jpeg';}
  else if(pathname==='/download/latest'){body=zip;type='application/zip';res.setHeader('Content-Disposition',`attachment; filename="doppelganger-${release.version}.zip"; filename*=UTF-8''${encodeURIComponent('doppelgänger-'+release.version+'.zip')}`);res.setHeader('X-Release-SHA256',release.sha256);}

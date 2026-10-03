@@ -30,3 +30,7 @@
 !/railway.json
 !/version.json
 !/.github/
+
+!/AGENTS.md
+!/CHANGELOG.md
+/website/dist/CHANGELOG.md
