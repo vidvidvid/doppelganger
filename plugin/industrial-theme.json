@@ -1,0 +1,1162 @@
+{
+  "bgcolor": [
+    0.055,
+    0.055,
+    0.052,
+    1
+  ],
+  "styles": {
+    "wet": {
+      "fontname": "Helvetica Neue",
+      "activedialcolor": [
+        1,
+        0.36,
+        0.1,
+        1
+      ],
+      "activefgdialcolor": [
+        0.22,
+        0.22,
+        0.19,
+        1
+      ],
+      "activeneedlecolor": [
+        0.94,
+        0.93,
+        0.85,
+        1
+      ],
+      "textcolor": [
+        0.8,
+        0.8,
+        0.73,
+        1
+      ],
+      "panelcolor": [
+        0.055,
+        0.055,
+        0.052,
+        1
+      ],
+      "bordercolor": [
+        0.2,
+        0.2,
+        0.18,
+        1
+      ]
+    },
+    "bypass": {
+      "fontname": "Arial",
+      "activebgcolor": [
+        0.1,
+        0.1,
+        0.09,
+        1
+      ],
+      "activebgoncolor": [
+        0.3,
+        0.15,
+        0.07,
+        1
+      ],
+      "activetextcolor": [
+        0.83,
+        0.83,
+        0.76,
+        1
+      ],
+      "activetextoncolor": [
+        1,
+        0.52,
+        0.23,
+        1
+      ],
+      "bordercolor": [
+        0.3,
+        0.3,
+        0.25,
+        1
+      ]
+    },
+    "title": {
+      "textcolor": [
+        0.94,
+        0.93,
+        0.85,
+        1
+      ],
+      "fontsize": 17,
+      "fontname": "Arial Narrow",
+      "text": "DOPPELG\u00c4NGER",
+      "presentation_rect": [
+        12,
+        8,
+        122,
+        26
+      ],
+      "patching_rect": [
+        12,
+        8,
+        122,
+        26
+      ]
+    },
+    "sub": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 10,
+      "fontname": "Helvetica Neue"
+    },
+    "load0": {
+      "fontsize": 11,
+      "fontname": "Arial",
+      "activebgcolor": [
+        0.1,
+        0.1,
+        0.09,
+        1
+      ],
+      "activebgoncolor": [
+        0.3,
+        0.15,
+        0.07,
+        1
+      ],
+      "activetextcolor": [
+        0.83,
+        0.83,
+        0.76,
+        1
+      ],
+      "activetextoncolor": [
+        1,
+        0.52,
+        0.23,
+        1
+      ],
+      "bordercolor": [
+        0.3,
+        0.3,
+        0.25,
+        1
+      ]
+    },
+    "droptext0": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 9,
+      "fontname": "Helvetica Neue"
+    },
+    "load1": {
+      "fontsize": 11,
+      "fontname": "Arial",
+      "activebgcolor": [
+        0.1,
+        0.1,
+        0.09,
+        1
+      ],
+      "activebgoncolor": [
+        0.3,
+        0.15,
+        0.07,
+        1
+      ],
+      "activetextcolor": [
+        0.83,
+        0.83,
+        0.76,
+        1
+      ],
+      "activetextoncolor": [
+        1,
+        0.52,
+        0.23,
+        1
+      ],
+      "bordercolor": [
+        0.3,
+        0.3,
+        0.25,
+        1
+      ]
+    },
+    "droptext1": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 9,
+      "fontname": "Helvetica Neue"
+    },
+    "load2": {
+      "fontsize": 11,
+      "fontname": "Arial",
+      "activebgcolor": [
+        0.1,
+        0.1,
+        0.09,
+        1
+      ],
+      "activebgoncolor": [
+        0.3,
+        0.15,
+        0.07,
+        1
+      ],
+      "activetextcolor": [
+        0.83,
+        0.83,
+        0.76,
+        1
+      ],
+      "activetextoncolor": [
+        1,
+        0.52,
+        0.23,
+        1
+      ],
+      "bordercolor": [
+        0.3,
+        0.3,
+        0.25,
+        1
+      ]
+    },
+    "droptext2": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 9,
+      "fontname": "Helvetica Neue"
+    },
+    "restore": {
+      "fontname": "Arial",
+      "activebgcolor": [
+        0.1,
+        0.1,
+        0.09,
+        1
+      ],
+      "activebgoncolor": [
+        0.3,
+        0.15,
+        0.07,
+        1
+      ],
+      "activetextcolor": [
+        0.83,
+        0.83,
+        0.76,
+        1
+      ],
+      "activetextoncolor": [
+        1,
+        0.52,
+        0.23,
+        1
+      ],
+      "bordercolor": [
+        0.3,
+        0.3,
+        0.25,
+        1
+      ]
+    },
+    "mode": {
+      "fontname": "Arial",
+      "activebgcolor": [
+        0.1,
+        0.1,
+        0.09,
+        1
+      ],
+      "activebgoncolor": [
+        0.3,
+        0.15,
+        0.07,
+        1
+      ],
+      "activetextcolor": [
+        0.83,
+        0.83,
+        0.76,
+        1
+      ],
+      "activetextoncolor": [
+        1,
+        0.52,
+        0.23,
+        1
+      ],
+      "bordercolor": [
+        0.3,
+        0.3,
+        0.25,
+        1
+      ]
+    },
+    "style": {
+      "fontname": "Arial",
+      "textcolor": [
+        0.35,
+        0.4,
+        0.44,
+        1
+      ],
+      "bgcolor": [
+        0.07,
+        0.08,
+        0.09,
+        1
+      ],
+      "activebgcolor": [
+        0.1,
+        0.1,
+        0.09,
+        1
+      ],
+      "activebgoncolor": [
+        0.3,
+        0.15,
+        0.07,
+        1
+      ],
+      "activetextcolor": [
+        0.83,
+        0.83,
+        0.76,
+        1
+      ],
+      "activetextoncolor": [
+        1,
+        0.52,
+        0.23,
+        1
+      ],
+      "bordercolor": [
+        0.3,
+        0.3,
+        0.25,
+        1
+      ]
+    },
+    "range": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 10,
+      "fontname": "Helvetica Neue"
+    },
+    "start": {
+      "fontname": "Helvetica Neue",
+      "activedialcolor": [
+        1,
+        0.36,
+        0.1,
+        1
+      ],
+      "activefgdialcolor": [
+        0.22,
+        0.22,
+        0.19,
+        1
+      ],
+      "activeneedlecolor": [
+        0.94,
+        0.93,
+        0.85,
+        1
+      ],
+      "textcolor": [
+        0.8,
+        0.8,
+        0.73,
+        1
+      ],
+      "panelcolor": [
+        0.055,
+        0.055,
+        0.052,
+        1
+      ],
+      "bordercolor": [
+        0.2,
+        0.2,
+        0.18,
+        1
+      ]
+    },
+    "end": {
+      "fontname": "Helvetica Neue",
+      "activedialcolor": [
+        1,
+        0.36,
+        0.1,
+        1
+      ],
+      "activefgdialcolor": [
+        0.22,
+        0.22,
+        0.19,
+        1
+      ],
+      "activeneedlecolor": [
+        0.94,
+        0.93,
+        0.85,
+        1
+      ],
+      "textcolor": [
+        0.8,
+        0.8,
+        0.73,
+        1
+      ],
+      "panelcolor": [
+        0.055,
+        0.055,
+        0.052,
+        1
+      ],
+      "bordercolor": [
+        0.2,
+        0.2,
+        0.18,
+        1
+      ]
+    },
+    "blend": {
+      "fontname": "Helvetica Neue",
+      "activedialcolor": [
+        1,
+        0.36,
+        0.1,
+        1
+      ],
+      "activefgdialcolor": [
+        0.22,
+        0.22,
+        0.19,
+        1
+      ],
+      "activeneedlecolor": [
+        0.94,
+        0.93,
+        0.85,
+        1
+      ],
+      "textcolor": [
+        0.8,
+        0.8,
+        0.73,
+        1
+      ],
+      "panelcolor": [
+        0.055,
+        0.055,
+        0.052,
+        1
+      ],
+      "bordercolor": [
+        0.2,
+        0.2,
+        0.18,
+        1
+      ]
+    },
+    "amount": {
+      "fontname": "Helvetica Neue",
+      "activedialcolor": [
+        1,
+        0.36,
+        0.1,
+        1
+      ],
+      "activefgdialcolor": [
+        0.22,
+        0.22,
+        0.19,
+        1
+      ],
+      "activeneedlecolor": [
+        0.94,
+        0.93,
+        0.85,
+        1
+      ],
+      "textcolor": [
+        0.8,
+        0.8,
+        0.73,
+        1
+      ],
+      "panelcolor": [
+        0.055,
+        0.055,
+        0.052,
+        1
+      ],
+      "bordercolor": [
+        0.2,
+        0.2,
+        0.18,
+        1
+      ]
+    },
+    "limit": {
+      "fontname": "Helvetica Neue",
+      "activedialcolor": [
+        1,
+        0.36,
+        0.1,
+        1
+      ],
+      "activefgdialcolor": [
+        0.22,
+        0.22,
+        0.19,
+        1
+      ],
+      "activeneedlecolor": [
+        0.94,
+        0.93,
+        0.85,
+        1
+      ],
+      "textcolor": [
+        0.8,
+        0.8,
+        0.73,
+        1
+      ],
+      "panelcolor": [
+        0.055,
+        0.055,
+        0.052,
+        1
+      ],
+      "bordercolor": [
+        0.2,
+        0.2,
+        0.18,
+        1
+      ]
+    },
+    "output": {
+      "fontname": "Helvetica Neue",
+      "activedialcolor": [
+        1,
+        0.36,
+        0.1,
+        1
+      ],
+      "activefgdialcolor": [
+        0.22,
+        0.22,
+        0.19,
+        1
+      ],
+      "activeneedlecolor": [
+        0.94,
+        0.93,
+        0.85,
+        1
+      ],
+      "textcolor": [
+        0.8,
+        0.8,
+        0.73,
+        1
+      ],
+      "panelcolor": [
+        0.055,
+        0.055,
+        0.052,
+        1
+      ],
+      "bordercolor": [
+        0.2,
+        0.2,
+        0.18,
+        1
+      ]
+    },
+    "drive": {
+      "fontname": "Helvetica Neue",
+      "activedialcolor": [
+        1,
+        0.36,
+        0.1,
+        1
+      ],
+      "activefgdialcolor": [
+        0.22,
+        0.22,
+        0.19,
+        1
+      ],
+      "activeneedlecolor": [
+        0.94,
+        0.93,
+        0.85,
+        1
+      ],
+      "textcolor": [
+        0.8,
+        0.8,
+        0.73,
+        1
+      ],
+      "panelcolor": [
+        0.055,
+        0.055,
+        0.052,
+        1
+      ],
+      "bordercolor": [
+        0.2,
+        0.2,
+        0.18,
+        1
+      ]
+    },
+    "reanalyze": {
+      "fontname": "Arial",
+      "activebgcolor": [
+        0.1,
+        0.1,
+        0.09,
+        1
+      ],
+      "activebgoncolor": [
+        0.3,
+        0.15,
+        0.07,
+        1
+      ],
+      "activetextcolor": [
+        0.83,
+        0.83,
+        0.76,
+        1
+      ],
+      "activetextoncolor": [
+        1,
+        0.52,
+        0.23,
+        1
+      ],
+      "bordercolor": [
+        0.3,
+        0.3,
+        0.25,
+        1
+      ]
+    },
+    "status": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 9,
+      "fontname": "Helvetica Neue"
+    },
+    "expand": {
+      "fontname": "Arial",
+      "activebgcolor": [
+        0.1,
+        0.1,
+        0.09,
+        1
+      ],
+      "activebgoncolor": [
+        0.3,
+        0.15,
+        0.07,
+        1
+      ],
+      "activetextcolor": [
+        0.83,
+        0.83,
+        0.76,
+        1
+      ],
+      "activetextoncolor": [
+        1,
+        0.52,
+        0.23,
+        1
+      ],
+      "bordercolor": [
+        0.3,
+        0.3,
+        0.25,
+        1
+      ]
+    },
+    "edit_hint": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 9,
+      "fontname": "Helvetica Neue"
+    },
+    "caption_blend": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 8.5,
+      "fontname": "Helvetica Neue",
+      "text": "A / B BLEND",
+      "presentation_rect": [
+        12,
+        95,
+        72,
+        15
+      ],
+      "patching_rect": [
+        12,
+        95,
+        72,
+        15
+      ]
+    },
+    "value_blend": {
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ],
+      "fontsize": 10,
+      "fontname": "Courier New"
+    },
+    "value_set_blend": {
+      "fontname": "Courier New",
+      "fontsize": 10,
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ]
+    },
+    "caption_amount": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 8.5,
+      "fontname": "Helvetica Neue",
+      "text": "INTENSITY",
+      "presentation_rect": [
+        106,
+        95,
+        76,
+        15
+      ],
+      "patching_rect": [
+        106,
+        95,
+        76,
+        15
+      ]
+    },
+    "value_amount": {
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ],
+      "fontsize": 10,
+      "fontname": "Courier New"
+    },
+    "value_set_amount": {
+      "fontname": "Courier New",
+      "fontsize": 10,
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ]
+    },
+    "caption_limit": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 8.5,
+      "fontname": "Helvetica Neue",
+      "text": "CORRECTION",
+      "presentation_rect": [
+        90,
+        95,
+        72,
+        15
+      ],
+      "patching_rect": [
+        90,
+        95,
+        72,
+        15
+      ]
+    },
+    "value_limit": {
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ],
+      "fontsize": 10,
+      "fontname": "Courier New"
+    },
+    "value_set_limit": {
+      "fontname": "Courier New",
+      "fontsize": 10,
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ]
+    },
+    "caption_output": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 8.5,
+      "fontname": "Helvetica Neue",
+      "text": "OUTPUT \u00b7 DB",
+      "presentation_rect": [
+        168,
+        95,
+        72,
+        15
+      ],
+      "patching_rect": [
+        168,
+        95,
+        72,
+        15
+      ]
+    },
+    "value_output": {
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ],
+      "fontsize": 10,
+      "fontname": "Courier New"
+    },
+    "value_set_output": {
+      "fontname": "Courier New",
+      "fontsize": 10,
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ]
+    },
+    "caption_drive": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 8.5,
+      "fontname": "Helvetica Neue",
+      "text": "DRIVE \u00b7 DB",
+      "presentation_rect": [
+        246,
+        95,
+        72,
+        15
+      ],
+      "patching_rect": [
+        246,
+        95,
+        72,
+        15
+      ]
+    },
+    "value_drive": {
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ],
+      "fontsize": 10,
+      "fontname": "Courier New"
+    },
+    "value_set_drive": {
+      "fontname": "Courier New",
+      "fontsize": 10,
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ]
+    },
+    "caption_start": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 8.5,
+      "fontname": "Helvetica Neue",
+      "text": "START \u00b7 %",
+      "presentation_rect": [
+        317,
+        91,
+        47,
+        15
+      ],
+      "patching_rect": [
+        317,
+        91,
+        47,
+        15
+      ]
+    },
+    "value_start": {
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ],
+      "fontsize": 10,
+      "fontname": "Courier New"
+    },
+    "value_set_start": {
+      "fontname": "Courier New",
+      "fontsize": 10,
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ]
+    },
+    "caption_end": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 8.5,
+      "fontname": "Helvetica Neue",
+      "text": "END \u00b7 %",
+      "presentation_rect": [
+        370,
+        91,
+        47,
+        15
+      ],
+      "patching_rect": [
+        370,
+        91,
+        47,
+        15
+      ]
+    },
+    "value_end": {
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ],
+      "fontsize": 10,
+      "fontname": "Courier New"
+    },
+    "value_set_end": {
+      "fontname": "Courier New",
+      "fontsize": 10,
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ]
+    },
+    "fullfile_hint": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 10,
+      "fontname": "Helvetica Neue"
+    },
+    "caption_wet": {
+      "textcolor": [
+        0.69,
+        0.69,
+        0.63,
+        1
+      ],
+      "fontsize": 8.5,
+      "fontname": "Helvetica Neue",
+      "text": "DRY/WET",
+      "presentation_rect": [
+        324,
+        95,
+        72,
+        15
+      ],
+      "patching_rect": [
+        324,
+        95,
+        72,
+        15
+      ]
+    },
+    "value_wet": {
+      "textcolor": [
+        0.85,
+        0.84,
+        0.76,
+        1
+      ],
+      "fontsize": 10,
+      "fontname": "Courier New"
+    },
+    "fold": {
+      "fontname": "Arial",
+      "activebgcolor": [
+        0.1,
+        0.1,
+        0.09,
+        1
+      ],
+      "activebgoncolor": [
+        0.3,
+        0.15,
+        0.07,
+        1
+      ],
+      "activetextcolor": [
+        0.83,
+        0.83,
+        0.76,
+        1
+      ],
+      "activetextoncolor": [
+        1,
+        0.52,
+        0.23,
+        1
+      ],
+      "bordercolor": [
+        0.3,
+        0.3,
+        0.25,
+        1
+      ]
+    }
+  },
+  "decorations": [
+    {
+      "box": {
+        "id": "identity_rail",
+        "maxclass": "panel",
+        "presentation": 1,
+        "presentation_rect": [
+          5,
+          10,
+          2,
+          22
+        ],
+        "patching_rect": [
+          5,
+          10,
+          2,
+          22
+        ],
+        "bgcolor": [
+          1,
+          0.36,
+          0.1,
+          1
+        ],
+        "border": 0,
+        "rounded": 0,
+        "ignoreclick": 1
+      }
+    },
+    {
+      "box": {
+        "id": "control_rule",
+        "maxclass": "panel",
+        "presentation": 1,
+        "presentation_rect": [
+          12,
+          90,
+          384,
+          1
+        ],
+        "patching_rect": [
+          12,
+          90,
+          384,
+          1
+        ],
+        "bgcolor": [
+          0.25,
+          0.25,
+          0.21,
+          1
+        ],
+        "border": 0,
+        "rounded": 0,
+        "ignoreclick": 1
+      }
+    }
+  ]
+}

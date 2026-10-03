@@ -1,0 +1,56 @@
+# doppelgänger
+
+A Max for Live reference-matching EQ and dynamics device for tracks, groups and the master.
+
+[Download the latest build](https://download-production-14fa.up.railway.app/) · [Illustrated controls guide](https://download-production-14fa.up.railway.app/guide)
+
+## Live source workflow (v0.3.0)
+
+1. Insert `doppelgänger.amxd` and load a reference track.
+2. Select **Live**, play a representative passage, and click **Learn**.
+3. Capture finishes after 20 seconds, or click **Hold** after at least 3 seconds.
+4. Select Precision or Filters to apply correction. Advice passes dry audio.
+
+For master-guided correction of a track/group, insert the included **Master Feed** companion last on the master device chain, select **Master** in the processing instance, and enable the desired regions in Analysis. Keep one active companion per Set. The companion passes audio unchanged and exchanges only analysis messages. Its tap is before the master fader.
+
+The master spectrum cannot identify which instrument caused a mismatch. Master mode provides guidance, not a predicted final master match. Switching to Master resets regional amounts to zero, clears custom points and disables dynamics. Use one correcting instance at a time and verify the actual master output. Continuous Follow is not implemented.
+
+## Source layout
+
+- `plugin/`: DSP, Max JavaScript UI, patch generators and synthetic tests.
+- `website/`: Node download server, illustrated guide and Railway deployment scripts.
+- `scripts/package.py`: builds a clean distributable from an explicit file list.
+
+The local legacy `outputs/` and `work/` folders are deliberately excluded from Git. Continue development in `plugin/` and `website/`.
+
+## Build and test
+
+Requires Python 3 and an installed Ableton Live 12 Suite application on macOS for the device-header template. The generated device and companion files are intended for both macOS and Windows.
+
+```sh
+python3 plugin/build.py
+node plugin/test_core.js
+node plugin/test_fresh_start.js
+node plugin/test_interaction.js
+node plugin/test_platform.js
+node plugin/test_live.js
+python3 scripts/package.py
+```
+
+Unzip the complete release folder and keep all companion files together. Requires Max for Live. FFmpeg is optional for library imports and additional loudness scans; it is not bundled.
+
+Native Max capture and automated state/UI tests have passed on macOS. Full multi-device Ableton playback and Windows testing for the new live modes remain pending. Live 11 compatibility is not verified.
+
+## Website
+
+```sh
+cd website
+node scripts/prepare-release.mjs '../dist/doppelgänger-share.zip' 0.3.0
+node server.mjs
+```
+
+Deploy using `node scripts/publish.mjs '../dist/doppelgänger-share.zip' 0.3.0` after setting `RAILWAY_PROJECT_ID`, `RAILWAY_SERVICE_ID` and `RAILWAY_PUBLIC_URL` and authenticating the Railway CLI. No account credentials or private deployment configuration are committed.
+
+## Privacy
+
+This repository contains no personal audio, Live Sets, captured audio, reference-library database, original track-analysis fixtures, account credentials or workstation paths. Test profiles are generated mathematically. Source audio stays local; learned profiles are stored with the Live Set. The reference library stores original file paths and analysis rather than duplicating audio.

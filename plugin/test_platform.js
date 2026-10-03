@@ -1,0 +1,16 @@
+const assert=require('assert'),p=require('./doppelganger_platform');
+assert.equal(p.libraryRoot('win32',{APPDATA:'D:\\Profiles\\Jörg\\AppData\\Roaming'},'C:\\Users\\Jörg'),'D:\\Profiles\\Jörg\\AppData\\Roaming\\Doppelganger\\References');
+assert.equal(p.libraryRoot('win32',{},'C:\\Users\\Jörg'),'C:\\Users\\Jörg\\AppData\\Roaming\\Doppelganger\\References');
+assert.equal(p.libraryRoot('darwin',{},'/Users/test'),'/Users/test/Library/Application Support/Doppelganger/References');
+const opts={platform:'win32',env:{Path:'C:\\Windows;"D:\\Audio Tools\\bin"'},home:'C:\\Users\\Jörg',isFile:f=>f==='D:\\Audio Tools\\bin\\ffmpeg.exe'};
+assert.equal(p.findFFmpeg(opts),'D:\\Audio Tools\\bin\\ffmpeg.exe');
+assert.equal(p.findFFmpeg({...opts,env:{DOPPELGANGER_FFMPEG:'"E:\\Sound Apps\\ffmpeg.exe"'},isFile:f=>f==='E:\\Sound Apps\\ffmpeg.exe'}),'E:\\Sound Apps\\ffmpeg.exe');
+assert.equal(p.findFFmpeg({...opts,isFile:()=>false}),undefined);
+assert(p.executableCandidates('win32',{},'C:\\Users\\Jörg').includes('C:\\ffmpeg\\bin\\ffmpeg.exe'));
+assert.equal(p.findFFmpeg({platform:'darwin',env:{},home:'/Users/test',isFile:f=>f==='/opt/homebrew/bin/ffmpeg'}),'/opt/homebrew/bin/ffmpeg');
+assert.equal(p.toMaxPath('C:\\Users\\Jörg\\My tracks\\paired.wav','win32'),'C:/Users/Jörg/My tracks/paired.wav');
+assert.equal(p.toMaxPath('\\\\server\\music\\paired.wav','win32'),'//server/music/paired.wav');
+assert.equal(p.resolveAudioPath('C:/Users/Jörg/song.wav','win32',()=>false),'C:/Users/Jörg/song.wav');
+assert.equal(p.resolveAudioPath('Macintosh HD:/Users/test/song.wav','darwin',v=>v==='/Users/test/song.wav'),'/Users/test/song.wav');
+assert.equal(p.resolveAudioPath('Music:/song.wav','darwin',v=>v==='/Volumes/Music/song.wav'),'/Volumes/Music/song.wav');
+console.log('PASS: Windows/macOS library paths, drive/UNC/unicode paths, PATH/override/fallback FFmpeg discovery, missing executable and Max-safe capture paths.');

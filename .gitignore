@@ -1,0 +1,26 @@
+# Only the reviewed public source tree is eligible for version control.
+/*
+!/.gitignore
+!/README.md
+!/plugin/
+!/website/
+!/scripts/
+.DS_Store
+**/__pycache__/
+**/node_modules/
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+**/*.wav
+**/*.mp3
+**/*.aif
+**/*.aiff
+**/*.als
+/plugin/*.amxd
+/plugin/doppelgänger*.maxpat
+/website/releases/
+/website/deployment.json
+
+/plugin/*-results.json
+/plugin/*-verification.json

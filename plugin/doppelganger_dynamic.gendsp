@@ -1,0 +1,256 @@
+{
+  "patcher": {
+    "fileversion": 1,
+    "classnamespace": "dsp.gen",
+    "rect": [
+      0,
+      0,
+      900,
+      720
+    ],
+    "boxes": [
+      {
+        "box": {
+          "id": "code",
+          "maxclass": "codebox",
+          "code": "Param amount(0); Param range(3); Param threshold(-24); Param attack(25); Param release(180);\nParam enable0(1);\nHistory dl10(0);\nHistory dl20(0);\nHistory dr10(0);\nHistory dr20(0);\nHistory el10(0);\nHistory el20(0);\nHistory er10(0);\nHistory er20(0);\nHistory env0(0);\nHistory gr0(0);\nParam enable1(1);\nHistory dl11(0);\nHistory dl21(0);\nHistory dr11(0);\nHistory dr21(0);\nHistory el11(0);\nHistory el21(0);\nHistory er11(0);\nHistory er21(0);\nHistory env1(0);\nHistory gr1(0);\nParam enable2(1);\nHistory dl12(0);\nHistory dl22(0);\nHistory dr12(0);\nHistory dr22(0);\nHistory el12(0);\nHistory el22(0);\nHistory er12(0);\nHistory er22(0);\nHistory env2(0);\nHistory gr2(0);\nParam enable3(1);\nHistory dl13(0);\nHistory dl23(0);\nHistory dr13(0);\nHistory dr23(0);\nHistory el13(0);\nHistory el23(0);\nHistory er13(0);\nHistory er23(0);\nHistory env3(0);\nHistory gr3(0);\nParam enable4(1);\nHistory dl14(0);\nHistory dl24(0);\nHistory dr14(0);\nHistory dr24(0);\nHistory el14(0);\nHistory el24(0);\nHistory er14(0);\nHistory er24(0);\nHistory env4(0);\nHistory gr4(0);\nxl=in1; xr=in2;\nec=exp(-1/(0.010*samplerate)); ac=exp(-1/(max(1,attack)*0.001*samplerate)); rc=exp(-1/(max(30,release)*0.001*samplerate));\nw0=6.283185307179586*min(55,samplerate*0.44)/samplerate; c0=cos(w0); al0=sin(w0)/2; dd0=1+al0;\nb00=al0/dd0; a10=-2*c0/dd0; a20=(1-al0)/dd0;\nbl0=b00*in1+dl10; dl10=-a10*bl0+dl20; dl20=-b00*in1-a20*bl0;\nbr0=b00*in2+dr10; dr10=-a10*br0+dr20; dr20=-b00*in2-a20*br0;\nenv0=ec*env0+(1-ec)*(bl0*bl0+br0*br0)*0.5;\nlevel0=10*log10(max(1e-20,env0)); excess0=level0-threshold;\nover0=excess0 < -3 ? 0 : (excess0 > 3 ? excess0 : (excess0+3)*(excess0+3)/12);\ntarget0=min(max(0,range),over0*0.5)*clamp(amount,0,1)*enable0; smooth0=target0>gr0?ac:rc; gr0=smooth0*gr0+(1-smooth0)*target0;\nA0=pow(10,-gr0/40); den0=1+al0/A0; p00=(1+al0*A0)/den0; p10=-2*c0/den0; p20=(1-al0*A0)/den0; q20=(1-al0/A0)/den0;\nyl0=p00*xl+el10; el10=p10*xl-p10*yl0+el20; el20=p20*xl-q20*yl0;\nyr0=p00*xr+er10; er10=p10*xr-p10*yr0+er20; er20=p20*xr-q20*yr0; xl=yl0; xr=yr0; out3=-gr0;\nw1=6.283185307179586*min(150,samplerate*0.44)/samplerate; c1=cos(w1); al1=sin(w1)/2; dd1=1+al1;\nb01=al1/dd1; a11=-2*c1/dd1; a21=(1-al1)/dd1;\nbl1=b01*in1+dl11; dl11=-a11*bl1+dl21; dl21=-b01*in1-a21*bl1;\nbr1=b01*in2+dr11; dr11=-a11*br1+dr21; dr21=-b01*in2-a21*br1;\nenv1=ec*env1+(1-ec)*(bl1*bl1+br1*br1)*0.5;\nlevel1=10*log10(max(1e-20,env1)); excess1=level1-threshold;\nover1=excess1 < -3 ? 0 : (excess1 > 3 ? excess1 : (excess1+3)*(excess1+3)/12);\ntarget1=min(max(0,range),over1*0.5)*clamp(amount,0,1)*enable1; smooth1=target1>gr1?ac:rc; gr1=smooth1*gr1+(1-smooth1)*target1;\nA1=pow(10,-gr1/40); den1=1+al1/A1; p01=(1+al1*A1)/den1; p11=-2*c1/den1; p21=(1-al1*A1)/den1; q21=(1-al1/A1)/den1;\nyl1=p01*xl+el11; el11=p11*xl-p11*yl1+el21; el21=p21*xl-q21*yl1;\nyr1=p01*xr+er11; er11=p11*xr-p11*yr1+er21; er21=p21*xr-q21*yr1; xl=yl1; xr=yr1; out4=-gr1;\nw2=6.283185307179586*min(700,samplerate*0.44)/samplerate; c2=cos(w2); al2=sin(w2)/2; dd2=1+al2;\nb02=al2/dd2; a12=-2*c2/dd2; a22=(1-al2)/dd2;\nbl2=b02*in1+dl12; dl12=-a12*bl2+dl22; dl22=-b02*in1-a22*bl2;\nbr2=b02*in2+dr12; dr12=-a12*br2+dr22; dr22=-b02*in2-a22*br2;\nenv2=ec*env2+(1-ec)*(bl2*bl2+br2*br2)*0.5;\nlevel2=10*log10(max(1e-20,env2)); excess2=level2-threshold;\nover2=excess2 < -3 ? 0 : (excess2 > 3 ? excess2 : (excess2+3)*(excess2+3)/12);\ntarget2=min(max(0,range),over2*0.5)*clamp(amount,0,1)*enable2; smooth2=target2>gr2?ac:rc; gr2=smooth2*gr2+(1-smooth2)*target2;\nA2=pow(10,-gr2/40); den2=1+al2/A2; p02=(1+al2*A2)/den2; p12=-2*c2/den2; p22=(1-al2*A2)/den2; q22=(1-al2/A2)/den2;\nyl2=p02*xl+el12; el12=p12*xl-p12*yl2+el22; el22=p22*xl-q22*yl2;\nyr2=p02*xr+er12; er12=p12*xr-p12*yr2+er22; er22=p22*xr-q22*yr2; xl=yl2; xr=yr2; out5=-gr2;\nw3=6.283185307179586*min(3500,samplerate*0.44)/samplerate; c3=cos(w3); al3=sin(w3)/2; dd3=1+al3;\nb03=al3/dd3; a13=-2*c3/dd3; a23=(1-al3)/dd3;\nbl3=b03*in1+dl13; dl13=-a13*bl3+dl23; dl23=-b03*in1-a23*bl3;\nbr3=b03*in2+dr13; dr13=-a13*br3+dr23; dr23=-b03*in2-a23*br3;\nenv3=ec*env3+(1-ec)*(bl3*bl3+br3*br3)*0.5;\nlevel3=10*log10(max(1e-20,env3)); excess3=level3-threshold;\nover3=excess3 < -3 ? 0 : (excess3 > 3 ? excess3 : (excess3+3)*(excess3+3)/12);\ntarget3=min(max(0,range),over3*0.5)*clamp(amount,0,1)*enable3; smooth3=target3>gr3?ac:rc; gr3=smooth3*gr3+(1-smooth3)*target3;\nA3=pow(10,-gr3/40); den3=1+al3/A3; p03=(1+al3*A3)/den3; p13=-2*c3/den3; p23=(1-al3*A3)/den3; q23=(1-al3/A3)/den3;\nyl3=p03*xl+el13; el13=p13*xl-p13*yl3+el23; el23=p23*xl-q23*yl3;\nyr3=p03*xr+er13; er13=p13*xr-p13*yr3+er23; er23=p23*xr-q23*yr3; xl=yl3; xr=yr3; out6=-gr3;\nw4=6.283185307179586*min(10000,samplerate*0.44)/samplerate; c4=cos(w4); al4=sin(w4)/2; dd4=1+al4;\nb04=al4/dd4; a14=-2*c4/dd4; a24=(1-al4)/dd4;\nbl4=b04*in1+dl14; dl14=-a14*bl4+dl24; dl24=-b04*in1-a24*bl4;\nbr4=b04*in2+dr14; dr14=-a14*br4+dr24; dr24=-b04*in2-a24*br4;\nenv4=ec*env4+(1-ec)*(bl4*bl4+br4*br4)*0.5;\nlevel4=10*log10(max(1e-20,env4)); excess4=level4-threshold;\nover4=excess4 < -3 ? 0 : (excess4 > 3 ? excess4 : (excess4+3)*(excess4+3)/12);\ntarget4=min(max(0,range),over4*0.5)*clamp(amount,0,1)*enable4; smooth4=target4>gr4?ac:rc; gr4=smooth4*gr4+(1-smooth4)*target4;\nA4=pow(10,-gr4/40); den4=1+al4/A4; p04=(1+al4*A4)/den4; p14=-2*c4/den4; p24=(1-al4*A4)/den4; q24=(1-al4/A4)/den4;\nyl4=p04*xl+el14; el14=p14*xl-p14*yl4+el24; el24=p24*xl-q24*yl4;\nyr4=p04*xr+er14; er14=p14*xr-p14*yr4+er24; er24=p24*xr-q24*yr4; xl=yl4; xr=yr4; out7=-gr4;\nout1=xl; out2=xr;",
+          "numinlets": 2,
+          "numoutlets": 7,
+          "patching_rect": [
+            150,
+            100,
+            650,
+            500
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "in0",
+          "maxclass": "newobj",
+          "text": "in 1",
+          "patching_rect": [
+            20,
+            20,
+            60,
+            22
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "in1",
+          "maxclass": "newobj",
+          "text": "in 2",
+          "patching_rect": [
+            100,
+            20,
+            60,
+            22
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "out0",
+          "maxclass": "newobj",
+          "text": "out 1",
+          "patching_rect": [
+            20,
+            650,
+            60,
+            22
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "out1",
+          "maxclass": "newobj",
+          "text": "out 2",
+          "patching_rect": [
+            100,
+            650,
+            60,
+            22
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "out2",
+          "maxclass": "newobj",
+          "text": "out 3",
+          "patching_rect": [
+            180,
+            650,
+            60,
+            22
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "out3",
+          "maxclass": "newobj",
+          "text": "out 4",
+          "patching_rect": [
+            260,
+            650,
+            60,
+            22
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "out4",
+          "maxclass": "newobj",
+          "text": "out 5",
+          "patching_rect": [
+            340,
+            650,
+            60,
+            22
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "out5",
+          "maxclass": "newobj",
+          "text": "out 6",
+          "patching_rect": [
+            420,
+            650,
+            60,
+            22
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "out6",
+          "maxclass": "newobj",
+          "text": "out 7",
+          "patching_rect": [
+            500,
+            650,
+            60,
+            22
+          ]
+        }
+      }
+    ],
+    "lines": [
+      {
+        "patchline": {
+          "source": [
+            "in0",
+            0
+          ],
+          "destination": [
+            "code",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "in1",
+            0
+          ],
+          "destination": [
+            "code",
+            1
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "code",
+            0
+          ],
+          "destination": [
+            "out0",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "code",
+            1
+          ],
+          "destination": [
+            "out1",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "code",
+            2
+          ],
+          "destination": [
+            "out2",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "code",
+            3
+          ],
+          "destination": [
+            "out3",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "code",
+            4
+          ],
+          "destination": [
+            "out4",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "code",
+            5
+          ],
+          "destination": [
+            "out5",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "code",
+            6
+          ],
+          "destination": [
+            "out6",
+            0
+          ]
+        }
+      }
+    ]
+  }
+}
