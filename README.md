@@ -60,3 +60,5 @@ This repository contains no personal audio, Live Sets, captured audio, reference
 Pushes to `main` trigger Railway through its GitHub connection. The root Dockerfile runs the tests, builds both devices, packages the ZIP and prepares the website before deployment. Failed builds do not replace the running site. Pull requests run the same checks in GitHub Actions without deploying. No Railway credentials are stored in this repository or GitHub Actions.
 
 Update `version.json` when making a numbered release. Every deployment includes its source commit in `/release.json`, even when the version number stays the same. Develop in `plugin/` and `website/`; ignored legacy working directories are not deployed.
+
+To confirm a push reached production, compare the `sourceCommit` field at [release.json](https://download-production-14fa.up.railway.app/release.json) with the commit SHA on GitHub. The website and downloadable ZIP are deployed together.
